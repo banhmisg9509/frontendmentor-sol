@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca:wght@200&display=swap');
+
+:root {
+  --blue1: hsl(233, 47%, 7%);
+  --blue2: hsl(244, 38%, 16%);
+  --violet: hsl(277, 64%, 61%);
+  --white1: hsl(0, 0%, 100%);
+  --white2: hsla(0, 0%, 100%, 0.75);
+  --white3: hsla(0, 0%, 100%, 0.6);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: var(--blue1);
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.highlight {
+  color: var(--violet);
+}
+
+.card {
+  width: 1110px;
+  display: flex;
+  background-color: var(--blue2);
+  color: var(--white1);
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.card__left {
+  padding: 7.2rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card__title {
+  font-family: 'Inter';
+  font-size: 3.5rem;
+  margin-bottom: 3rem;
+}
+
+.card__text {
+  font-family: 'Inter';
+  color: var(--white2);
+  line-height: 1.5;
+  padding-right: 5rem;
+}
+
+.card__stats {
+  list-style: none;
+  margin-top: auto;
+  font-family: 'Inter';
+  display: flex;
+  column-gap: 6rem;
+}
+
+.card__stats li {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.8rem;
+}
+
+.card__stats small {
+  letter-spacing: 1.1px;
+  font-family: 'Lexend Deca';
+  text-transform: uppercase;
+  color: var(--white2);
+}
+
+.card__right {
+  position: relative;
+}
+
+.card__right img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.card__right__overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(91, 13, 139, 0.6);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+@media (max-width: 500px) {
+  body {
+    min-height: 960px;
+  }
+  .card {
+    flex-direction: column-reverse;
+    width: 328px;
+  }
+
+  .card__left {
+    padding: 4rem 3rem;
+  }
+
+  .card__title {
+    text-align: center;
+    font-size: 2.8rem;
+  }
+
+  .card__text {
+    text-align: center;
+    padding: 0;
+    margin-bottom: 3rem;
+  }
+
+  .card__stats {
+    text-align: center;
+    margin: 0 auto;
+    flex-direction: column;
+    row-gap: 3rem;
+  }
+
+  .card__right img {
+    width: 100%;
+    object-fit: cover;
+  }
+}
