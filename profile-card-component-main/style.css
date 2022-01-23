@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+:root {
+  --cyan: hsl(185, 75%, 39%);
+  --blue: hsl(229, 23%, 23%);
+  --dark-blue: hsl(227, 10%, 46%);
+  --gray: hsl(0, 0%, 59%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Kubmh Sans', sans-serif;
+  font-size: 1.6rem;
+}
+
+.container {
+  position: relative;
+  background-color: var(--cyan);
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.bg-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-35%, -55%);
+}
+
+.bg-bottom {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: translate(28%, 75%);
+}
+
+.card {
+  width: 350px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card__banner {
+  position: relative;
+}
+
+.card__banner img {
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+}
+
+.card__avatar {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 5px solid white;
+  border-radius: 50%;
+}
+
+.card__avatar img {
+  border-radius: 50%;
+}
+
+.card__content {
+  margin-top: -5px;
+  padding-top: 7.2rem;
+  background-color: white;
+  text-align: center;
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+}
+
+.card__info {
+  margin-bottom: 2rem;
+  line-height: 1.8;
+  color: var(--gray);
+}
+
+.card__info h4 {
+  color: var(--blue);
+  font-size: 18px;
+}
+
+.card__info h4 span {
+  color: var(--gray);
+  font-weight: 400;
+}
+
+.card__stat {
+  color: var(--blue);
+  width: 100%;
+  padding: 2rem;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  border-top: 1px solid rgb(221, 221, 221, 0.7);
+}
+
+.card__stat small {
+  color: var(--gray);
+  letter-spacing: 1.1px;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 500px) {
+  .bg-top {
+    width: 450px;
+    height: 450px;
+    transform: translate(-55%, -55%);
+  }
+
+  .bg-bottom {
+    width: 450px;
+    height: 450px;
+    transform: translate(55%, 40%);
+  }
+}

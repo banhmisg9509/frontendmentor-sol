@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+
+:root {
+  --orange: hsl(31, 77%, 52%);
+  --cyan: hsl(184, 100%, 22%);
+  --dark-cyan: hsl(179, 100%, 13%);
+  --white: hsla(0, 0%, 100%, 0.75);
+  --gray: hsl(0, 0%, 95%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: var(--gray);
+  font-size: 1.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 308px;
+  padding: 4.9rem;
+}
+
+.card:first-child {
+  border-top-left-radius: 0.8rem;
+  border-bottom-left-radius: 0.8rem;
+}
+
+.card:last-child {
+  border-top-right-radius: 0.8rem;
+  border-bottom-right-radius: 0.8rem;
+}
+
+.card.sedan {
+  background-color: var(--orange);
+}
+.card.sedan .card__btn {
+  color: var(--orange);
+}
+
+.card.suv {
+  background-color: var(--cyan);
+}
+.card.suv .card__btn {
+  color: var(--cyan);
+}
+
+.card.luxury {
+  background-color: var(--dark-cyan);
+}
+.card.luxury .card__btn {
+  color: var(--dark-cyan);
+}
+
+.card__title {
+  color: var(--gray);
+  font-family: 'Big Shoulders Display';
+  font-size: 4rem;
+  text-transform: uppercase;
+  margin: 3rem 0;
+}
+
+.card__text {
+  color: var(--white);
+  font-family: 'Lexend Deca';
+  font-size: 1.5rem;
+  line-height: 1.5;
+  margin-bottom: 8rem;
+}
+
+.card__btn {
+  border: none;
+  cursor: pointer;
+  padding: 1.5rem 3.2rem;
+  border-radius: 5rem;
+  font-family: 'Lexend Deca';
+  font-size: 1.6rem;
+  background-color: var(--gray);
+  transition: all 0.3s ease;
+}
+
+.card .card__btn:hover {
+  background-color: transparent;
+  box-shadow: inset 0 0 0 2.5px var(--white);
+  color: var(--white);
+}
+
+@media (max-width: 600px) {
+  .card:first-child {
+    border-radius: 0;
+    border-top-left-radius: 0.8rem;
+    border-top-right-radius: 0.8rem;
+  }
+
+  .card:last-child {
+    border-radius: 0;
+    border-bottom-left-radius: 0.8rem;
+    border-bottom-right-radius: 0.8rem;
+  }
+}

@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+:root {
+  --soft-blue: hsl(215, 51%, 70%);
+  --cyan: hsl(178, 100%, 50%);
+  --dark-blue-main: hsl(217, 54%, 11%);
+  --dark-blue-card: hsl(216, 50%, 16%);
+  --dark-blue-line: hsl(215, 32%, 27%);
+  --white: hsl(0, 0%, 100%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: var(--dark-blue-main);
+  font-size: 1.6rem;
+  font-family: 'Outfit';
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.card__wrapper {
+  background-color: #0c1729;
+  width: 380px;
+  height: 650px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 350px;
+  height: 600px;
+  padding: 24px;
+  border-radius: 10px;
+  background-color: var(--dark-blue-card);
+}
+
+.card__header {
+  position: relative;
+}
+
+.card__header__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 99%;
+  border-radius: 10px;
+  background-color: rgb(0, 255, 247, 0.5);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.card__header__overlay img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card__header:hover .card__header__overlay {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.card__img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.card__title {
+  color: var(--white);
+  font-size: 2.2rem;
+  font-weight: bolder;
+  margin: 1.8rem 0;
+  display: block;
+  transition: color 0.4s ease;
+}
+
+.card__title:hover {
+  color: var(--cyan);
+}
+
+.card__desc {
+  color: var(--soft-blue);
+  font-weight: 300;
+  font-size: 1.8rem;
+  margin-bottom: 1.8rem;
+}
+
+.card__value {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card__value_eth {
+  color: var(--cyan);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 600;
+}
+
+.card__value__time {
+  color: var(--soft-blue);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.card__footer {
+  position: relative;
+  margin-top: 60px;
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  color: var(--soft-blue);
+}
+
+.card__footer::before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 1px;
+  background: var(--dark-blue-line);
+  top: -2.4rem;
+}
+
+.card__footer img {
+  width: 35px;
+  height: 35px;
+  border: 1px solid var(--white);
+  border-radius: 50%;
+}
+
+.card__author {
+  color: var(--white);
+  font-weight: 300;
+  transition: color 0.4s ease;
+}
+
+.card__author:hover {
+  color: var(--cyan);
+}
+
+.attribution {
+  position: absolute;
+  bottom: 1%;
+  color: var(--soft-blue);
+}
+
+@media (min-width: 300px) {
+  body {
+    min-height: 680px;
+  }
+
+  .card {
+    width: 340px;
+  }
+}
