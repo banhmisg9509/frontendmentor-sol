@@ -19,6 +19,7 @@ html {
 }
 
 body {
+  position: relative;
   background-color: var(--gray);
   font-size: 1.6rem;
   display: flex;
@@ -114,5 +115,9 @@ body {
     border-radius: 0;
     border-bottom-left-radius: 0.8rem;
     border-bottom-right-radius: 0.8rem;
+  }
+
+  body {
+    height: 1600px;
   }
 }
