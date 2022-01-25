@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+
+    <title>Frontend Mentor | Article preview component</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="card">
+      <div class="card__left">
+        <img src="./images/drawers.jpg" alt="drawers" />
+      </div>
+      <div class="card__right">
+        <h2 class="card__title">
+          Shift the overall look and feel by adding these wonderful touches to furniture in your
+          home
+        </h2>
+        <p class="card__text">
+          Ever been in a room and felt like something was missing? Perhaps it felt slightly bare and
+          uninviting. I’ve got some simple tips to help you make any room feel complete.
+        </p>
+        <div class="card__author">
+          <img src="./images/avatar-michelle.jpg" alt="Michelle" class="avatar" />
+          <div class="card__author__info">
+            <h4>Michelle Appleton</h4>
+            <p>28 Jun 2020</p>
+          </div>
+          <button id="shareBtn" class="btn">
+            <img src="./images/icon-share.svg" alt="share-btn" />
+          </button>
+          <div class="share" id="share">
+            <p class="share-text">share</p>
+            <a href="#"><img src="./images/icon-facebook.svg" alt="facebook" /></a>
+            <a href="#"><img src="./images/icon-twitter.svg" alt="twitter" /></a>
+            <a href="" id=""><img src="./images/icon-pinterest.svg" alt="pinterest" /></a>
+          </div>
+        </div>
+        <div class="share2" id="shareBottom">
+          <p class="share-text">share</p>
+          <a href="#"><img src="./images/icon-facebook.svg" alt="facebook" /></a>
+          <a href="#"><img src="./images/icon-twitter.svg" alt="twitter" /></a>
+          <a href="" id=""><img src="./images/icon-pinterest.svg" alt="pinterest" /></a>
+          <button id="shareBottomBtn" class="btn">
+            <img src="./images/icon-share-white.svg" alt="share-btn" />
+          </button>
+        </div>
+      </div>
+    </div>
+    <script>
+      const shareBottom = document.getElementById('shareBottom');
+      const shareBottomBtn = document.getElementById('shareBottomBtn');
+
+      const share = document.getElementById('share');
+      const shareBtn = document.getElementById('shareBtn');
+
+      shareBottomBtn.addEventListener('click', function () {
+        shareBottom.classList.toggle('show');
+      });
+
+      shareBtn.addEventListener('click', function () {
+        if (window.innerWidth <= 640) {
+          shareBottom.classList.add('show');
+        } else {
+          share.classList.toggle('show');
+        }
+      });
+    </script>
+  </body>
+</html>
