@@ -109,7 +109,6 @@ body {
 }
 
 .question__title img {
-  transform: rotate(180deg);
   transition: transform 0.3s ease;
 }
 
@@ -129,7 +128,7 @@ body {
 }
 
 .question.show .question__title img {
-  transform: rotate(0deg);
+  transform: rotate(180deg);
 }
 
 @media (min-width: 750px) {
