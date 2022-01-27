@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Frontend Mentor | FAQ Accordion Card</title>
+  </head>
+  <body>
+    <div class="container">
+      <img class="header-img" src="./images/illustration-woman-online-mobile.svg" alt="girl" />
+      <img class="header-pattern" src="./images/bg-pattern-mobile.svg" alt="bg-pattern" />
+      <div class="overlay">
+        <img class="left-img" src="./images/illustration-woman-online-desktop.svg" alt="girl" />
+        <img class="left-pattern" src="./images//bg-pattern-desktop.svg" alt="bg-pattern" />
+      </div>
+      <img class="box" src="./images/illustration-box-desktop.svg" alt="box" />
+      <div class="question-wrapper">
+        <h1>FAQ</h1>
+        <ul class="list">
+          <li class="question">
+            <div class="question__title">
+              <h4>How many team members can I invite?</h4>
+              <img src="./images/icon-arrow-down.svg" alt="down-arrow" />
+            </div>
+            <p>
+              You can invite up to 2 additional users on the Free plan. There is no limit on team
+              members for the Premium plan.
+            </p>
+          </li>
+          <li class="question">
+            <div class="question__title">
+              <h4>What is the maximum file upload size?</h4>
+              <img src="./images/icon-arrow-down.svg" alt="down-arrow" />
+            </div>
+            <p>No more than 2GB. All files in your account must fit your allotted storage space.</p>
+          </li>
+          <li class="question">
+            <div class="question__title">
+              <h4>How do I reset my password?</h4>
+              <img src="./images/icon-arrow-down.svg" alt="down-arrow" />
+            </div>
+            <p>
+              Click “Forgot password” from the login page or “Change password” from your profile
+              page. A reset link will be emailed to you.
+            </p>
+          </li>
+          <li class="question">
+            <div class="question__title">
+              <h4>Can I cancel my subscription?</h4>
+              <img src="./images/icon-arrow-down.svg" alt="down-arrow" />
+            </div>
+            <p>Yes! Send us a message and we'll process your request no questions asked.</p>
+          </li>
+          <li class="question">
+            <div class="question__title">
+              <h4>Do you provide additional support?</h4>
+              <img src="./images/icon-arrow-down.svg" alt="down-arrow" />
+            </div>
+            <p>
+              Chat and email support is available 24/7. Phone lines are open during normal business
+              hours.
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+  <script>
+    const questions = document.querySelectorAll('.question');
+
+    questions.forEach((question) => {
+      question.addEventListener('click', function () {
+        this.classList.toggle('show');
+      });
+    });
+  </script>
+</html>
