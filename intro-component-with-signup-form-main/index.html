@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Frontend Mentor | Intro component with sign up form</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="intro">
+        <h1>Learn to code by watching others</h1>
+        <p>
+          See how experienced developers solve problems in real-time. Watching scripted tutorials is
+          great, but understanding how developers think is invaluable.
+        </p>
+      </div>
+      <div class="main">
+        <div class="header">
+          <p><strong>Try it free 7 days</strong> then 20/mo. thereafter</p>
+        </div>
+        <form class="form" id="signupForm">
+          <div class="form__control">
+            <input type="text" placeholder="Frist Name" id="firstname" />
+            <p class="form__message"></p>
+          </div>
+          <div class="form__control">
+            <input type="text" placeholder="Last Name" id="lastname" />
+            <p class="form__message"></p>
+          </div>
+          <div class="form__control">
+            <input type="email" placeholder="Email Address" id="email" />
+            <p class="form__message"></p>
+          </div>
+          <div class="form__control">
+            <input type="password" placeholder="Password" id="password" />
+            <p class="form__message"></p>
+          </div>
+          <button class="submit__btn" id="submitBtn" type="submit">Claim your free trial</button>
+          <div class="signup__terms">
+            <p>
+              By clicking the button, you are agreeing to our <a href="#">Terms and Services</a>
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      const submitBtn = document.querySelector('#submitBtn');
+      submitBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        const isInvalid = rules.some((rule) => rule.isInvalid || rule.isEmpty);
+        if (isInvalid) {
+          return '';
+        }
+        console.log('submit form');
+      });
+
+      function isRequired(value, message) {
+        return value ? '' : message;
+      }
+
+      function isEmail(value, message) {
+        return /(.+)@(.+){2,}\.(.+){2,}/.test(value) ? '' : message;
+      }
+
+      function validate(rule) {
+        const input = document.querySelector(rule.selector);
+        const control = input.parentElement;
+        const message = control.querySelector('.form__message');
+
+        input.addEventListener('input', function () {
+          rule.isEmpty = !this.value;
+        });
+
+        input.addEventListener('blur', function () {
+          const errorMessage = rule.validator(this.value, rule.errorMessage);
+          if (errorMessage) {
+            control.classList.add('invalid');
+            message.innerText = errorMessage;
+            rule.isInvalid = true;
+          }
+        });
+
+        input.addEventListener('focus', function () {
+          control.classList.remove('invalid');
+          message.innerText = '';
+          rule.isInvalid = false;
+        });
+      }
+
+      const rules = [
+        {
+          selector: '#firstname',
+          errorMessage: 'First Name cannot be empty',
+          validator: isRequired,
+          isInvalid: false,
+          isEmpty: true,
+        },
+        {
+          selector: '#lastname',
+          errorMessage: 'Last Name cannot be empty',
+          validator: isRequired,
+          isInvalid: false,
+          isEmpty: true,
+        },
+        {
+          selector: '#email',
+          errorMessage: 'Looks like this is not an email',
+          validator: isEmail,
+          isInvalid: false,
+          isEmpty: true,
+        },
+        {
+          selector: '#password',
+          errorMessage: 'Password cannot be empty',
+          validator: isRequired,
+          isInvalid: false,
+          isEmpty: true,
+        },
+      ];
+
+      rules.forEach((rule) => {
+        validate(rule);
+      });
+    </script>
+  </body>
+</html>
