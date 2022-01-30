@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Frontend Mentor | Base Apparel coming soon page</title>
+  </head>
+  <body>
+    <div class="card">
+      <img class="card__logo" src="./images/logo.svg" alt="logo" />
+      <div class="card__hero">
+        <img class="mobile" src="./images/hero-mobile.jpg" alt="girl" />
+        <img class="desktop" src="./images/hero-desktop.jpg" alt="girl" />
+      </div>
+      <div class="card__content">
+        <h1 class="card__header"><span class="thin">We're</span> coming soon</h1>
+        <p class="card__text">
+          Hello fellow shoppers! We're currently building our new fashion store. Add your email
+          below to stay up-to-date with announcements and our launch deals.
+        </p>
+
+        <div class="card__input">
+          <input type="email" id="email" placeholder="Email Address" />
+          <button type="submit" id="submitBtn">
+            <img src="./images/icon-arrow.svg" alt="arrow" />
+          </button>
+          <span class="card__message"></span>
+        </div>
+      </div>
+    </div>
+    <script>
+      const submitBtn = document.querySelector('#submitBtn');
+      submitBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        const isInvalid = rules.some((rule) => rule.isInvalid || rule.isEmpty);
+        if (isInvalid) {
+          return '';
+        }
+        console.log('submit form');
+      });
+
+      function isEmail(value, message) {
+        return /(.+)@(.+){2,}\.(.+){2,}/.test(value) ? '' : message;
+      }
+
+      function validate(rule) {
+        const input = document.querySelector(rule.selector);
+        const control = input.parentElement;
+        const message = control.querySelector('.card__message');
+
+        input.addEventListener('input', function () {
+          rule.isEmpty = !this.value;
+        });
+
+        input.addEventListener('blur', function () {
+          const errorMessage = rule.validator(this.value, rule.errorMessage);
+          if (errorMessage) {
+            control.classList.add('invalid');
+            message.innerText = errorMessage;
+            rule.isInvalid = true;
+          }
+        });
+
+        input.addEventListener('focus', function () {
+          control.classList.remove('invalid');
+          message.innerText = '';
+          rule.isInvalid = false;
+        });
+      }
+
+      const rules = [
+        {
+          selector: '#email',
+          errorMessage: 'Please provide a valid email',
+          validator: isEmail,
+          isInvalid: false,
+          isEmpty: true,
+        },
+      ];
+
+      rules.forEach((rule) => {
+        validate(rule);
+      });
+    </script>
+  </body>
+</html>
