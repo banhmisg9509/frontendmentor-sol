@@ -64,6 +64,7 @@ body {
   letter-spacing: 10px;
   margin-top: 5rem;
   margin-bottom: 1.5rem;
+  width: 100%;
 }
 
 .card__header .thin {
@@ -144,18 +145,15 @@ body {
 }
 
 @media (min-width: 640px) {
-  body {
-    background-image: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
-  }
-
   .card {
-    height: 800px;
-    width: 1440px;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
     flex-direction: row-reverse;
   }
 
   .card__hero {
-    max-width: 610px;
+    flex: 1;
   }
 
   .card__hero .mobile {
@@ -173,10 +171,10 @@ body {
 
   .card__content {
     flex: 1;
-    padding: 0 16.5rem;
+    padding: 0 13.5rem;
     background-image: url('./images/bg-pattern-desktop.svg'),
       linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
-    background-position: center center;
+    background-size: cover;
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
@@ -185,6 +183,7 @@ body {
   }
 
   .card__header {
+    margin-top: 0;
     font-size: 7.5rem;
     text-align: left;
   }
@@ -195,7 +194,7 @@ body {
   }
 
   .card__input {
-    width: 95%;
+    width: 465px;
     align-self: flex-start;
   }
 
@@ -214,7 +213,7 @@ body {
 
   .card__logo {
     top: 5%;
-    left: 16.5rem;
+    left: 13.5rem;
     height: 3.5rem;
   }
 }
