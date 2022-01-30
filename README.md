@@ -8,6 +8,7 @@ This repo is created to share my solutions of Frontend Mentor's challenges
 | ----------------------------------- | ------ |
 | [3-column-preview-card](https://banhmisg9509.github.io/frontendmentor-sol/3-column-preview-card-component-main/) | Newbie |
 | [article-preview](https://banhmisg9509.github.io/frontendmentor-sol/article-preview-component-main/) | Newbie |
+| [base-apparel-coming-soon-main](https://banhmisg9509.github.io/frontendmentor-sol/base-apparel-coming-soon-main/) | Newbie |
 | [faq-accordion-card](https://banhmisg9509.github.io/frontendmentor-sol/faq-accordion-card-main/) | Newbie |
 | [intro-component-with-signup-form](https://banhmisg9509.github.io/frontendmentor-sol/intro-component-with-signup-form-main/) | Newbie |
 | [nft-preview-card](https://banhmisg9509.github.io/frontendmentor-sol/nft-preview-card-component-main/)      | Newbie |
