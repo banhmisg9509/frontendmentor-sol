@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;600&display=swap');
+
+:root {
+  --violet: hsl(257, 40%, 49%);
+  --magenta: hsl(300, 69%, 71%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  background-image: url('./images/bg-mobile.svg');
+  background-color: var(--violet);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 750px;
+  margin: 0 auto;
+  padding: 0 4rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero {
+  margin-bottom: 8rem;
+}
+
+.hero img {
+  width: 100%;
+}
+
+.hero .logo {
+  margin: 2.5rem 0 5rem;
+  width: 50%;
+}
+
+.content {
+  text-align: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+}
+
+.desc {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  padding: 0 1rem;
+  margin-bottom: 5rem;
+}
+
+.content__btn {
+  display: block;
+  margin: 0 auto;
+  width: 70%;
+  height: 6rem;
+  background-color: #fff;
+  font-family: 'Poppins';
+  font-size: 2rem;
+  color: var(--violet);
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+.content__btn:hover {
+  background-color: var(--magenta);
+  color: white;
+}
+
+.share {
+  width: 100%;
+  height: 20rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 2.5rem;
+  gap: 4rem;
+}
+
+.share i {
+  border: 2px solid white;
+  border-radius: 50%;
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+.share i:hover {
+  border-color: var(--magenta);
+  color: var(--magenta);
+}
+
+@media (min-width: 750px) {
+  body {
+    background-image: url('images/bg-desktop.svg');
+    background-size: cover;
+    height: 100vh;
+  }
+
+  .container {
+    flex-direction: row;
+    align-items: center;
+    width: 80%;
+    padding: 0;
+    margin: 0;
+    gap: 5rem;
+  }
+
+  .hero .logo {
+    width: 30%;
+    min-width: 20rem;
+  }
+
+  .hero {
+    flex: 6;
+  }
+
+  .content {
+    flex: 4;
+    text-align: left;
+  }
+
+  .title {
+    font-size: 4rem;
+    padding-right: 6%;
+    margin-bottom: 2rem;
+  }
+
+  .desc {
+    padding: 0;
+    font-size: 1.8rem;
+  }
+
+  .content__btn {
+    margin: 0;
+    width: 35%;
+    min-width: 25rem;
+  }
+
+  .share {
+    margin-bottom: -50%;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+}
