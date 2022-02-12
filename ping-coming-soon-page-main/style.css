@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&family=Open+Sans&display=swap');
+
+:root {
+  --blue1: hsl(223, 87%, 63%);
+  --blue2: hsl(223, 100%, 88%);
+  --blue3: hsl(209, 33%, 12%);
+  --red: hsl(354, 100%, 66%);
+  --gray: hsl(0, 0%, 59%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 2rem;
+}
+
+.container {
+  width: 375px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.logo {
+  text-align: center;
+  margin-top: 10rem;
+  margin-bottom: 5rem;
+}
+
+.title {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 300;
+  color: var(--gray);
+  margin-bottom: 3rem;
+}
+
+.title strong {
+  color: black;
+}
+
+.notification {
+  font-size: 2rem;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form input {
+  width: 100%;
+  padding: 2rem 4rem;
+  border-radius: 5rem;
+  border: 1px solid var(--blue2);
+  font-size: 1.5rem;
+}
+
+.form__control {
+  width: 100%;
+}
+
+.form__control.invalid {
+  margin-bottom: 3rem;
+}
+
+.form__control.invalid input {
+  border: 1px solid var(--red);
+}
+
+.form__control .form__message {
+  color: var(--red);
+  font-style: italic;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.form__control input::placeholder {
+  color: var(--blue2);
+}
+
+.form button[type='submit'] {
+  padding: 2rem 4rem;
+  border: none;
+  border-radius: 5rem;
+  background-color: var(--blue1);
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 5px 10px var(--blue2);
+  font-weight: bold;
+}
+
+.form button[type='submit']:hover {
+  opacity: 0.7;
+}
+
+
+.dashboard {
+  margin: 10rem 0;
+}
+
+.dashboard img {
+  width: 100%;
+  object-fit: contain;
+  object-position: center center;
+}
+
+.share {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.share i {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--blue1);
+  border: 1px solid var(--blue2);
+  border-radius: 50%;
+}
+
+.footer {
+  text-align: center;
+  font-size: 1.5rem;
+  color: var(--gray);
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 750px) {
+  .container {
+    width: 960px;
+  }
+
+  .form {
+    flex-direction: row;
+  }
+
+  .form__control {
+    flex: 8;
+  }
+
+  .form button[type='submit'] {
+    flex: 2;
+  }
+
+  .title {
+    font-size: 5rem;
+  }
+
+  .form__control.invalid {
+    position: relative;
+    margin-bottom: 0;
+  }
+
+  .form__control .form__message {
+    position: absolute;
+    left: 4rem;
+    color: var(--red);
+    font-style: italic;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 0.5rem;
+  }
+  
+}

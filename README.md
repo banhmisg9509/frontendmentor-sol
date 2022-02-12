@@ -15,6 +15,7 @@ This repo is created to share my solutions of Frontend Mentor's challenges
 | [intro-component-with-signup-form](https://banhmisg9509.github.io/frontendmentor-sol/intro-component-with-signup-form-main/) | Newbie |
 | [nft-preview-card](https://banhmisg9509.github.io/frontendmentor-sol/nft-preview-card-component-main/)      | Newbie |
 | [order-summary](https://banhmisg9509.github.io/frontendmentor-sol/order-summary-component-main/)    | Newbie |
+| [ping-coming-soon-page](https://banhmisg9509.github.io/frontendmentor-sol/ping-coming-soon-page-main/)    | Newbie |
 | [profile-card](https://banhmisg9509.github.io/frontendmentor-sol/profile-card-component-main/)     | Newbie |
 | [qr-code](https://banhmisg9509.github.io/frontendmentor-sol/qr-code-component-main/)          | Newbie |
 | [social-proof-section](https://banhmisg9509.github.io/frontendmentor-sol/social-proof-section-main/)          | Newbie |

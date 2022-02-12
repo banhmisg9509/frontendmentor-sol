@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+
+    <title>Frontend Mentor | Ping coming soon page</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="logo">
+        <img src="./images/logo.svg" alt="logo" />
+      </div>
+      <h1 class="title">We are launching <strong>soon!</strong></h1>
+      <h2 class="notification">Subscribe and get notified</h2>
+      <form class="form">
+        <div class="form__control">
+          <input type="text" placeholder="Your email address..." id='email' />
+          <p class="form__message"></p>
+        </div>
+        <button type="submit" id="submitBtn">Notify Me</button>
+      </form>
+      <div class="dashboard">
+        <img src="./images/illustration-dashboard.png" alt="dashboard" />
+      </div>
+      <div class="share">
+        <i class="fab fa-facebook-f"></i>
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-instagram"></i>
+      </div>
+      <p class="footer">&copy; Copyright Ping. All rights reserved.</p>
+    </div>
+
+    <script>
+      const submitBtn = document.querySelector('#submitBtn');
+      submitBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        const isInvalid = rules.some((rule) => rule.isInvalid || rule.isEmpty);
+        if (isInvalid) {
+          return '';
+        }
+        console.log('submit form');
+      });
+
+      function isEmail(value, message) {
+        return /(.+)@(.+){2,}\.(.+){2,}/.test(value) ? '' : message;
+      }
+
+      function validate(rule) {
+        const input = document.querySelector(rule.selector);
+        const control = input.parentElement;
+        const message = control.querySelector('.form__message');
+
+        input.addEventListener('input', function () {
+          rule.isEmpty = !this.value;
+        });
+
+        input.addEventListener('blur', function () {
+          const errorMessage = rule.validator(this.value, rule.errorMessage);
+          if (errorMessage) {
+            control.classList.add('invalid');
+            message.innerText = errorMessage;
+            rule.isInvalid = true;
+          }
+        });
+
+        input.addEventListener('focus', function () {
+          control.classList.remove('invalid');
+          message.innerText = '';
+          rule.isInvalid = false;
+        });
+      }
+
+      const rules = [
+        {
+          selector: '#email',
+          errorMessage: 'Please provide a valid email adress',
+          validator: isEmail,
+          isInvalid: false,
+          isEmpty: true,
+        },
+      ];
+
+      rules.forEach((rule) => {
+        validate(rule);
+      });
+    </script>
+  </body>
+</html>
