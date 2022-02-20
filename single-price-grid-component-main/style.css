@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&family=Libre+Franklin:wght@300;600;700&display=swap');
+
+:root {
+  --cyan: hsl(179, 62%, 43%);
+  --cyan2: hsl(179, 47%, 52%);
+  --yellow: hsl(71, 73%, 54%);
+  --gray: hsl(204, 43%, 93%);
+  --blue: hsl(218, 22%, 67%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Karla', sans-serif;
+  font-size: 1.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--gray);
+}
+
+.container {
+  width: 312px;
+  display: flex;
+  flex-direction: column;
+  margin: 5rem 0;
+}
+
+.card {
+  padding: 2rem;
+}
+
+.card.intro {
+  background-color: white;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.card.intro h3 {
+  color: var(--cyan);
+}
+
+.card.intro h4 {
+  color: var(--yellow);
+  margin: 2rem 0;
+}
+
+.card.intro p {
+  color: var(--blue);
+  line-height: 1.8;
+  font-size: 1.4rem;
+}
+
+.card.price {
+  background-color: var(--cyan);
+  color: var(--gray);
+}
+
+.card.price h4 {
+  color: hsl(204, 43%, 93%, 0.5);
+  font-weight: lighter;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.card.price span {
+  display: inline-block;
+}
+
+.card.price h4 strong {
+  font-size: 3rem;
+  color: var(--gray);
+}
+
+.card.price p {
+  margin-bottom: 2.5rem;
+}
+
+.btn {
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  padding: 1.6rem 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: white;
+  background-color: var(--yellow);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.card.info {
+  background-color: var(--cyan2);
+  color: var(--gray);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.card.info h3 {
+  margin-bottom: 1.5rem;
+}
+
+.card.info ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 1.4rem;
+  color: hsl(204, 43%, 93%, 0.8);
+}
+
+@media (min-width: 750px) {
+  .container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 635px;
+  }
+
+  .card {
+    padding: 4rem;
+  }
+
+  .card.intro h3 {
+    font-size: 2.5rem;
+  }
+
+  .card.price {
+    flex: 1;
+    border-bottom-left-radius: 5px;
+  }
+
+  .card.info {
+    flex: 1;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 5px;
+  }
+}
