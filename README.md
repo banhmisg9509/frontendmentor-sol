@@ -21,6 +21,7 @@ This repo is created to share my solutions of Frontend Mentor's challenges
 | [single-price-grid-component](https://banhmisg9509.github.io/frontendmentor-sol/single-price-grid-component-main/)          | Newbie |
 | [social-proof-section](https://banhmisg9509.github.io/frontendmentor-sol/social-proof-section-main/)          | Newbie |
 | [stats-preview-card](https://banhmisg9509.github.io/frontendmentor-sol/stats-preview-card-component-main/)          | Newbie |
+| [time-tracking-dashboard](https://banhmisg9509.github.io/frontendmentor-sol/time-tracking-dashboard-main/)          | Junior |
 | [tip-calculator-app](https://banhmisg9509.github.io/frontendmentor-sol/tip-calculator-app-main/dist/)          | Junior |
 
 ## Author
