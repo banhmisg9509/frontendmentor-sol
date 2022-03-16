@@ -1,0 +1,13 @@
+{
+  "name": "time-tracking-dashboard-main",
+  "private": true,
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^2.8.0"
+  }
+}

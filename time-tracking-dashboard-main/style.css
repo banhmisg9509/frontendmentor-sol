@@ -1,0 +1,277 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --blue1: hsl(246, 80%, 60%);
+  --blue2: hsl(195, 74%, 62%);
+  --blue3: hsl(226, 43%, 10%);
+  --blue4: hsl(235, 46%, 20%);
+  --blue5: hsl(235, 45%, 61%);
+  --blue6: hsl(236, 100%, 87%);
+  --red1: hsl(15, 100%, 70%);
+  --red2: hsl(348, 100%, 68%);
+  --green: hsl(145, 58%, 55%);
+  --orange: hsl(43, 84%, 65%);
+  --violet: hsl(264, 64%, 52%);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.8rem;
+  font-family: 'Rubik', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--blue3);
+}
+
+ul {
+  list-style: none;
+}
+
+.avatar {
+  width: 45%;
+}
+
+.avatar img {
+  width: 100%;
+  object-fit: contain;
+  border: 2px solid white;
+  border-radius: 50%;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(200px, 230px));
+  gap: 2rem;
+}
+
+.box {
+  border-radius: 1.6rem;
+  width: 230px;
+  height: 230px;
+  background-color: var(--blue4);
+  color: white;
+}
+
+.box .header {
+  height: 20%;
+  background-color: transparent;
+}
+
+.box .content {
+  height: 81%;
+  background-color: var(--blue4);
+  border-radius: inherit;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: background-color 0.3s ease;
+}
+
+.box .content:hover {
+  cursor: pointer;
+  background-color: hsl(237, 45%, 30%);
+}
+
+.box .content .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.box .content .top img:hover {
+  cursor: pointer;
+}
+
+.box .content .main p {
+  font-size: 5rem;
+  font-weight: 300;
+}
+
+.box .content .main span {
+  color: var(--blue6);
+  font-size: 1.5rem;
+}
+
+.option {
+  grid-row: span 2;
+  height: 100%;
+}
+
+.option .content:hover {
+  cursor: unset;
+  background-color: unset;
+}
+
+.option .header {
+  padding: 2.5rem;
+  background-color: var(--blue1);
+  border-radius: 1.6rem;
+  height: 65%;
+}
+
+.option .header p {
+  color: var(--blue6);
+}
+
+.option .header h2 {
+  font-size: 4rem;
+  font-weight: 300;
+}
+
+.option .header .name {
+  margin-top: 3rem;
+}
+
+.option .content {
+  height: 35%;
+  padding: 2.5rem;
+}
+
+.time {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: var(--blue5);
+}
+
+.time li {
+  transition: color 0.3s ease;
+}
+
+.time li:hover {
+  cursor: pointer;
+  color: white;
+}
+
+.time li.active {
+  color: white;
+}
+
+.work {
+  background-color: var(--red1);
+  background-image: url(./images/icon-work.svg);
+  background-repeat: no-repeat;
+  background-position: 85% -7%;
+}
+
+.play {
+  background-color: var(--blue2);
+  background-image: url(./images/icon-play.svg);
+  background-repeat: no-repeat;
+  background-position: 85% -7%;
+}
+
+.study {
+  background-color: var(--red2);
+  background-image: url(./images/icon-study.svg);
+  background-repeat: no-repeat;
+  background-position: 85% -7%;
+}
+
+.exercise {
+  background-color: var(--green);
+  background-image: url(./images/icon-exercise.svg);
+  background-repeat: no-repeat;
+  background-position: 85% 1%;
+}
+
+.social {
+  background-color: var(--violet);
+  background-image: url(./images/icon-social.svg);
+  background-repeat: no-repeat;
+  background-position: 85% -7%;
+}
+
+.self-care {
+  background-color: var(--orange);
+  background-image: url(./images/icon-self-care.svg);
+  background-repeat: no-repeat;
+  background-position: 85% -7%;
+}
+
+@media (max-width: 768px) {
+  body {
+    height: unset;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 0;
+  }
+
+  .box {
+    width: 85%;
+    height: 160px;
+    margin: 0 auto;
+  }
+
+  .option {
+    height: 220px;
+  }
+
+  .time {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .avatar  {
+    width: 20%;
+  }
+
+  .box .header {
+    height: 30%;
+  }
+
+  .box .content {
+    justify-content: unset;
+    padding: 2rem;
+    height: 71%;
+  }
+
+  .option .header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    height: 65%;
+  }
+
+  .option .content {
+    height: 35%;
+  }
+
+  .option .header h2 {
+    font-size: 3rem;
+    font-weight: 300;
+  }
+
+  .option .header p {
+    font-size: 1.5rem;
+  }
+
+  .option .header .name {
+    margin-top: 0;
+  }
+
+  .box .content .main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .box .content .main p {
+    font-size: 3rem;
+  }
+}

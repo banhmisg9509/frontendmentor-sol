@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Frontend Mentor | Time tracking dashboard</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box option">
+        <div class="header">
+          <div class="avatar">
+            <img src="./images/image-jeremy.png" alt="Jeremy" />
+          </div>
+          <div class="name">
+            <p>Report for</p>
+            <h2>Jeremy Robson</h2>
+          </div>
+        </div>
+        <div class="content">
+          <ul class="time" id="time-frames">
+            <li>Daily</li>
+            <li>Weekly</li>
+            <li>Monthly</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    let boxes = null;
+    const timeFrames = document.querySelectorAll('#time-frames li');
+    let selectedTimeFrame = {
+      node: timeFrames[1],
+      value: timeFrames[1].innerHTML.toLowerCase(),
+    };
+    selectedTimeFrame.node.classList.add('active');
+
+    timeFrames.forEach((frames) => {
+      frames.addEventListener('click', function () {
+        selectedTimeFrame.node.classList.remove('active');
+        selectedTimeFrame.node = this;
+        selectedTimeFrame.node.classList.add('active');
+        selectedTimeFrame.value = this.innerHTML.toLowerCase();
+        changeTimeFrame();
+      });
+    });
+
+    let data = null;
+    function fetchData() {
+      return fetch('./data.json').then((data) => data.json());
+    }
+
+    fetchData().then((result) => {
+      data = result;
+      const container = document.querySelector('.container');
+      data.forEach((item) => {
+        let className = 'box ' + item.title.toLowerCase().split(' ').join('-');
+        let time = {
+          curr: item.timeframes[selectedTimeFrame.value].current,
+          prev: item.timeframes[selectedTimeFrame.value].previous,
+        };
+
+        const elem = document.createElement('div');
+        elem.className = className;
+        elem.innerHTML = `<div class="header"></div>
+          <div class="content">
+            <div class="top">
+              <span class="title">${item.title}</span>
+              <img src="./images/icon-ellipsis.svg" alt="icon-ellipsis" />
+            </div>
+            <div class="main">
+              <p>${time.curr}hrs</p>
+              <span>Last Week - ${time.prev}hrs</span>
+            </div>
+          </div>`;
+
+        container.appendChild(elem);
+      });
+
+      boxes = document.querySelectorAll('.container .box:not(:first-child)');
+    });
+
+    function changeTimeFrame() {
+      data.forEach((item, id) => {
+        let time = {
+          curr: item.timeframes[selectedTimeFrame.value].current,
+          prev: item.timeframes[selectedTimeFrame.value].previous,
+        };
+
+        let main = boxes[id].querySelector('.main');
+        main.innerHTML = `
+          <p>${time.curr}hrs</p>
+          <span>Last Week - ${time.prev}hrs</span>
+        `;
+      });
+    }
+  </script>
+</html>
