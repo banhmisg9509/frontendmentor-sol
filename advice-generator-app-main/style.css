@@ -1,0 +1,121 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --cyan: hsl(193, 38%, 86%);
+  --green: hsl(150, 100%, 66%);
+  --blue1: hsl(217, 19%, 38%);
+  --blue2: hsl(217, 19%, 24%);
+  --blue3: hsl(218, 23%, 16%);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 2.8rem;
+  font-family: 'Manrope', sans-serif;
+  background-color: var(--blue3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.divider {
+  background-image: url(images/pattern-divider-desktop.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 100%;
+  height: 20px;
+}
+
+.card {
+  width: 80%;
+  max-width: 560px;
+  min-height: 340px;
+  background-color: var(--blue2);
+  color: var(--cyan);
+  padding: 4.5rem 1rem;
+  border-radius: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+}
+
+.card__title {
+  letter-spacing: 5px;
+  font-size: 1.5rem;
+  color: var(--green);
+}
+
+.card__content {
+  padding: 0 5rem;
+  text-align: center;
+}
+
+.random__advice {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  width: 60px;
+  height: 60px;
+  background-image: url(images/icon-dice.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 40%;
+  background-color: var(--green);
+  border: unset;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+
+.random__advice:hover {
+  box-shadow: 0 0 30px hsl(150, 100%, 66%);
+}
+
+.random__advice.active {
+  animation: spin 0.8s;
+}
+
+@keyframes spin {
+  from {
+    transform: translate(-50%, 50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, 50%) rotate(180deg);
+  }
+}
+
+@media (max-width: 500px) {
+  .card {
+    width: 90%;
+  }
+
+  .card__title {
+    font-size: 1.2rem;
+  }
+
+  .card__content {
+    padding: 0 2rem;
+    font-size: 2.2rem;
+  }
+
+  .divider {
+    background-image: url(images/pattern-divider-mobile.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 90%;
+    height: 20px;
+  }
+}
