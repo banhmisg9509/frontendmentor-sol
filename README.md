@@ -24,6 +24,7 @@ This repo is created to share my solutions of Frontend Mentor's challenges
 | [advice-generator-app](https://banhmisg9509.github.io/frontendmentor-sol/advice-generator-app-main)          | Junior |
 | [time-tracking-dashboard](https://banhmisg9509.github.io/frontendmentor-sol/time-tracking-dashboard-main/)          | Junior |
 | [tip-calculator-app](https://banhmisg9509.github.io/frontendmentor-sol/tip-calculator-app-main/dist/)          | Junior |
+| [sunnyside-agency-landing-page](https://banhmisg9509.github.io/frontendmentor-sol/sunnyside-agency-landing-page-main/dist/)          | Junior |
 
 ## Author
 
