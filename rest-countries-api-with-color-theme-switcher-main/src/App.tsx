@@ -1,4 +1,8 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Layout from "./components/layout/Layout";
 import { useDesignContext } from "./context/DesignContext";
+import Countries from "./pages/Countries";
+import CountryDetail from "./pages/CountryDetail";
 
 function App() {
   const { design } = useDesignContext();
@@ -18,9 +22,14 @@ function App() {
   }
 
   return (
-    <>
-      <h1>Hello world</h1>
-    </>
+    <BrowserRouter>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Countries />} />
+          <Route path="/country/:id" element={<CountryDetail />} />
+        </Routes>
+      </Layout>
+    </BrowserRouter>
   );
 }
 
