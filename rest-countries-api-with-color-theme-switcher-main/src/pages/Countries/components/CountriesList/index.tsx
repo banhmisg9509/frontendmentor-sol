@@ -1,25 +1,32 @@
+import { useEffect } from "react";
 import CountryCard from "../../../../components/CountryCard";
-import { useGetAllCountries } from "../../../../hooks/queries/useGetAllCountries";
+import { getAllCountries } from "../../../../store/countries/thunks";
+import { useAppDispatch, useAppSelector } from "../../../../store/hooks";
 
 export default function CountriesList() {
-  const { data, error, isLoading } = useGetAllCountries();
+  const dispatch = useAppDispatch();
+  const { countries, filterByName, filterByRegion } = useAppSelector(
+    (state) => state.countries
+  );
 
-  if (isLoading) {
-    return <p>Loading...</p>;
-  }
+  useEffect(() => {
+    dispatch(getAllCountries());
+  }, []);
 
-  if (error) {
-    return <p>Error {error.toString()}</p>;
-  }
   return (
-    <>
-      {data?.length && (
-        <div className="mt-10 flex flex-col items-center gap-11">
-          {data.map((country) => (
-            <CountryCard key={country.name.common} country={country} />
-          ))}
-        </div>
-      )}
-    </>
+    <div className="mt-10 flex flex-col items-center gap-11">
+      {countries
+        .filter((country) => {
+          return country.name.official
+            .toLowerCase()
+            .includes(filterByName.toLowerCase());
+        })
+        .filter((country) => {
+          return country.region.includes(filterByRegion);
+        })
+        .map((country) => (
+          <CountryCard key={country.name.common} country={country} />
+        ))}
+    </div>
   );
 }

@@ -3,18 +3,22 @@ import {
   MdOutlineKeyboardArrowDown,
   MdOutlineKeyboardArrowUp,
 } from "react-icons/md";
+import { filterByRegion } from "../../../../store/countries/countrySlice";
+import { useAppDispatch } from "../../../../store/hooks";
 
 export default function FilterBar() {
+  const dispatch = useAppDispatch();
   const [showMenu, setShowMenu] = useState(false);
   const [selectedRegion, setSelectedRegion] = useState("Filter by Region");
 
   const regions = useMemo(
-    () => ["Africa", "America", "Asia", "Europe", "Oceania"],
+    () => ["All", "Africa", "Americas", "Asia", "Europe", "Oceania"],
     []
   );
 
   const handleSelectRegion = (region: string) => {
     setSelectedRegion(region);
+    dispatch(filterByRegion(region));
   };
 
   return (
