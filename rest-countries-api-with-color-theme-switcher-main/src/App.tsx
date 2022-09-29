@@ -5,7 +5,7 @@ import CountryDetail from "./pages/CountryDetail";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.VITE_BASE_NAME}>
       <Layout>
         <Routes>
           <Route path="/" element={<Countries />} />
