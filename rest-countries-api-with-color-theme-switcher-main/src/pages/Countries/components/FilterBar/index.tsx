@@ -3,7 +3,7 @@ import {
   MdOutlineKeyboardArrowDown,
   MdOutlineKeyboardArrowUp,
 } from "react-icons/md";
-import { filterByRegion } from "../../../../store/countries/countrySlice";
+import { filterByRegion } from "../../../../store/countries/countriesSlice";
 import { useAppDispatch } from "../../../../store/hooks";
 
 export default function FilterBar() {
@@ -30,16 +30,15 @@ export default function FilterBar() {
       {showMenu ? <MdOutlineKeyboardArrowUp /> : <MdOutlineKeyboardArrowDown />}
       {showMenu && (
         <ul className="absolute flex flex-col text-sm font-semibold w-full rounded-lg top-[108%] py-2 left-0 shadow-[rgba(99,99,99,0.2)_0px_1px_5px_0px] bg-white">
-          {regions &&
-            regions.map((region) => (
-              <li
-                key={region}
-                onClick={() => handleSelectRegion(region)}
-                className="hover:bg-slate-100 cursor-pointer px-5 py-1 select-none"
-              >
-                <span>{region}</span>
-              </li>
-            ))}
+          {regions.map((region) => (
+            <li
+              key={region}
+              onClick={() => handleSelectRegion(region)}
+              className="hover:bg-slate-100 cursor-pointer px-5 py-1 select-none"
+            >
+              <span>{region}</span>
+            </li>
+          ))}
         </ul>
       )}
     </div>

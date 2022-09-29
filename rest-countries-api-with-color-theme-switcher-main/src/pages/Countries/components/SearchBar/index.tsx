@@ -1,15 +1,16 @@
 import { useEffect, useRef, useState } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 import useDebounce from "../../../../hooks/useDebounce";
-import { filterByName } from "../../../../store/countries/countrySlice";
-import { useAppDispatch } from "../../../../store/hooks";
+import { filterByName } from "../../../../store/countries/countriesSlice";
+import { useAppDispatch, useAppSelector } from "../../../../store/hooks";
 
 export default function SearchBar() {
   const ref = useRef<HTMLInputElement>(null);
   const dispatch = useAppDispatch();
-  const [searchTerm, setSearchTerm] = useState("");
+  const { filterByName: name } = useAppSelector((state) => state.countries);
+  const [searchTerm, setSearchTerm] = useState(name);
 
-  const debouncedSearchTerm = useDebounce(searchTerm, 500);
+  const debouncedSearchTerm = useDebounce(searchTerm, 100);
 
   useEffect(() => {
     if (document.activeElement === ref.current) {

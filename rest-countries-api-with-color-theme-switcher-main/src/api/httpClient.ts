@@ -1,7 +1,13 @@
-import axios from "axios";
+import { setup } from "axios-cache-adapter";
 
-const httpClient = axios.create({
+const httpClient = setup({
   baseURL: "https://restcountries.com/v3.1",
+  cache: {
+    maxAge: 15 * 60 * 1000,
+    exclude: {
+      query: false,
+    },
+  },
 });
 
 httpClient.interceptors.request.use(

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Country } from "../../models/Country";
 
 interface Props {
@@ -6,7 +7,8 @@ interface Props {
 
 export default function CountryCard({ country }: Props) {
   return (
-    <div
+    <Link
+      to={`/country/${country.cioc}`}
       key={country.name.common}
       className="w-[290px] min-h-[365px] shadow-lg rounded-lg cursor-pointer"
     >
@@ -21,18 +23,19 @@ export default function CountryCard({ country }: Props) {
         <p className="text-lg font-bold">{country.name.official}</p>
         <div className="mt-[25px]">
           <p>
-            <span className="font-semibold">Population:</span>{" "}
-            {country.population}
+            <span className="font-semibold">Population: </span>
+            {country.population.toLocaleString("en", { useGrouping: true })}
           </p>
           <p>
-            <span className="font-semibold">Region:</span> {country.region}
+            <span className="font-semibold">Region: </span>
+            {country.region}
           </p>
           <p>
-            <span className="font-semibold">Capital:</span>{" "}
+            <span className="font-semibold">Capital: </span>
             {country.capital?.toString()}
           </p>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
