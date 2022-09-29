@@ -12,7 +12,7 @@ export default function CountryCard({ country }: Props) {
       key={country.name.common}
       className="w-[290px] min-h-[365px] shadow-lg rounded-lg cursor-pointer"
     >
-      <div className="w-full flex-shrink-0">
+      <div className="w-full h-[170px]">
         <img
           src={country.flags.svg}
           alt={country.name.common}

@@ -13,7 +13,7 @@ export default function CountriesList() {
   }, []);
 
   return (
-    <div className="mt-10 flex flex-col items-center gap-11">
+    <div className="max-w-[1580px] mx-auto mt-10 flex flex-col items-center gap-11 sm:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 sm:gap-20 sm:place-items-center">
       {countries.map((country) => (
         <CountryCard key={country.name.common} country={country} />
       ))}

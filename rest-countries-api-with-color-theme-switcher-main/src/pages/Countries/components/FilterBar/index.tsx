@@ -24,7 +24,7 @@ export default function FilterBar() {
   return (
     <div
       onClick={() => setShowMenu((value) => !value)}
-      className="relative flex items-center justify-between w-[220px] h-[54px] mt-[42px] p-5 rounded-lg shadow-[rgba(99,99,99,0.2)_0px_1px_5px_0px]"
+      className="relative flex items-center justify-between w-[220px] h-[54px] p-5 rounded-lg shadow-[rgba(99,99,99,0.2)_0px_1px_5px_0px]"
     >
       <p className="text-sm font-semibold select-none">{selectedRegion}</p>
       {showMenu ? <MdOutlineKeyboardArrowUp /> : <MdOutlineKeyboardArrowDown />}

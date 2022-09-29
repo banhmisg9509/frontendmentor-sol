@@ -19,7 +19,7 @@ export default function SearchBar() {
   }, [debouncedSearchTerm]);
 
   return (
-    <div className="w-full h-[52px] rounded-lg shadow-[rgba(99,99,99,0.2)_0px_1px_5px_0px] relative">
+    <div className="w-full md:max-w-[520px] h-[52px] rounded-lg shadow-[rgba(99,99,99,0.2)_0px_1px_5px_0px] relative">
       <AiOutlineSearch
         color="#858585"
         className="absolute text-xl top-1/2 translate-x-[150%] -translate-y-1/2"
