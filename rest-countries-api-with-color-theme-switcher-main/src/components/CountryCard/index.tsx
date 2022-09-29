@@ -8,9 +8,9 @@ interface Props {
 export default function CountryCard({ country }: Props) {
   return (
     <Link
-      to={`/country/${country.cioc}`}
+      to={`/country/${country.cioc ? country.cioc : country.cca3}`}
       key={country.name.common}
-      className="w-[290px] min-h-[365px] shadow-lg rounded-lg cursor-pointer"
+      className="w-[290px] min-h-[365px] sm:min-h-[385px] shadow-lg rounded-lg cursor-pointer dark:bg-blue1"
     >
       <div className="w-full h-[170px]">
         <img

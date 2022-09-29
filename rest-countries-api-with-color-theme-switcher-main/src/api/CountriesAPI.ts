@@ -4,7 +4,7 @@ import httpClient from "./httpClient";
 export const CountriesAPI = {
   all: async (): Promise<Country[]> => {
     return await httpClient.get(
-      "/all?fields=name,region,capital,population,flags,cioc"
+      "/all?fields=name,region,capital,population,flags,cioc,cca3"
     );
   },
   getByCode: async (code: string): Promise<Country[]> => {

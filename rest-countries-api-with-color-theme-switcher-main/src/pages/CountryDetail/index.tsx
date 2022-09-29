@@ -18,23 +18,25 @@ export default function CountryDetail({}: Props) {
   }, [id]);
 
   return (
-    <div className="py-10 px-4 sm:px-0 container mx-auto">
+    <div className="py-10 px-8 sm:px-0 container mx-auto">
       <Link
         to="/"
-        className="flex items-center justify-center w-[112px] h-[35px] rounded-sm shadow-[#00000059_0px_0px_10px]"
+        className="flex items-center justify-center w-[112px] h-[35px] rounded-sm shadow-[#00000059_0px_0px_10px] dark:bg-blue1"
       >
         <BsArrowLeft />
         <span>Back</span>
       </Link>
       {country && (
-        <div className="mt-12 flex flex-col lg:flex-row lg:items-center gap-10 lg:gap-24">
+        <div className="mt-12 flex flex-col lg:flex-row lg:items-center gap-20 lg:justify-between">
           <div className="w-full lg:max-w-[50%]">
             <img src={country.flags.svg} alt={country.name.common} />
           </div>
-          <div>
-            <h1 className="text-[22px] font-bold mt-5">{country.name.official}</h1>
-            <div className="flex flex-col md:flex-row gap-8 mt-8">
-              <div>
+          <div className="xl:ml-auto">
+            <h1 className="text-[22px] md:text-3xl font-bold mt-5">
+              {country.name.official}
+            </h1>
+            <div className="flex flex-col md:flex-row xl:gap-32 gap-10 mt-8">
+              <div className="flex flex-col gap-2">
                 <p>
                   <span className="font-semibold">Native Name: </span>
                   {Object.values(country.name.nativeName)[0].official}
@@ -59,10 +61,10 @@ export default function CountryDetail({}: Props) {
                 </p>
               </div>
 
-              <div>
+              <div className="flex flex-col gap-2">
                 <p>
                   <span className="font-semibold">Top Level Domain: </span>
-                  {country.tld}
+                  {country.tld.join(', ')}
                 </p>
                 <p>
                   <span className="font-semibold">Currencies: </span>
@@ -72,7 +74,7 @@ export default function CountryDetail({}: Props) {
                 </p>
                 <p>
                   <span className="font-semibold">Languages: </span>
-                  {Object.values(country.languages)}
+                  {Object.values(country.languages).join(', ')}
                 </p>
               </div>
             </div>
@@ -83,7 +85,7 @@ export default function CountryDetail({}: Props) {
                 <Link
                   key={country.cioc}
                   to={`/country/${country.cioc}`}
-                  className="px-4 py-1 rounded-sm shadow-[#00000059_0px_0px_8px]"
+                  className="px-4 py-1 rounded-sm shadow-[#00000059_0px_0px_8px] dark:bg-blue1"
                 >
                   {country.name.common}
                 </Link>

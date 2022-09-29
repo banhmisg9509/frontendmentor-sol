@@ -1,11 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { countriesSlice } from "./countries/countriesSlice";
-import { countrySlice } from "./country/countrySlice";
+import countriesReducer from "./countries/countriesSlice";
+import countryReducer from "./country/countrySlice";
+import themeReducer from "./theme/themeSlice";
 
 export const store = configureStore({
   reducer: {
-    countries: countriesSlice.reducer,
-    country: countrySlice.reducer,
+    countries: countriesReducer,
+    country: countryReducer,
+    theme: themeReducer,
   },
 });
 

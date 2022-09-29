@@ -11,6 +11,7 @@ export interface Country {
   flags: { png: string; svg: string };
   tld: string[];
   cioc: string;
+  cca3: string;
   currencies: Record<string, { name: string; symbol: string }>;
   languages: Record<string, string>;
   borders: string[]
