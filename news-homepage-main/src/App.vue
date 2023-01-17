@@ -5,7 +5,7 @@ import PopularArticles from "./components/PopularArticles.vue";
 </script>
 
 <template>
-  <main class="max-w-[1440px] mx-auto bg-off-white px-4 pb-10 md:px-2 2xl:px-0">
+  <main class="max-w-[1110px] mx-auto bg-off-white px-4 pb-10 md:px-2 2xl:px-0">
     <NavBar />
     <MainArticles />
     <PopularArticles />
