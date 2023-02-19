@@ -29,6 +29,7 @@ This repo is created to share my solutions of Frontend Mentor's challenges
 | [pricing-component-with-toggle-main](https://banhmisg9509.github.io/frontendmentor-sol/pricing-component-with-toggle-main/dist/)          | Junior |
 | [notifications-page-main](https://banhmisg9509.github.io/frontendmentor-sol/notifications-page-main/dist/)          | Junior |
 | [interactive-card-details-form-main](https://banhmisg9509.github.io/frontendmentor-sol/interactive-card-details-form-main/dist/)          | Junior |
+| [expenses-chart-component-main](https://banhmisg9509.github.io/frontendmentor-sol/expenses-chart-component-main/dist/)          | Junior |
 | [manage-landing-page](https://banhmisg9509.github.io/frontendmentor-sol/manage-landing-page-main/dist/)          | Intermediate |
 | [static-job-listings-page](https://banhmisg9509.github.io/frontendmentor-sol/static-job-listings-main/dist/)          | Intermediate |
 | [rest-countries-api-with-color-theme-switcher-page](https://banhmisg9509.github.io/frontendmentor-sol/rest-countries-api-with-color-theme-switcher-main/dist/) | Advanced |
